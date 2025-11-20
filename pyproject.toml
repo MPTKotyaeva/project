@@ -1,0 +1,39 @@
+[project]
+name = "games_project_Kotayeva"
+version = "0.1.0"
+description = "Games project for Kotayeva"
+authors = [
+    { name = "Student", email = "isip_e.n.kotyaeva@mpt.ru" }
+]
+dependencies = [
+    "prompt>=0.4.1",
+]
+requires-python = ">=3.10"
+
+[project.scripts]
+VD-games = "games_project_Kotayeva.VD_games.scripts.VD_main:main"
+VD-even = "games_project_Kotayeva.VD_games.scripts.VD_even:run_even_game"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.4.5",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
